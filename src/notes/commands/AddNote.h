@@ -6,8 +6,20 @@
 class AddNote : public AbstractCommand {
 public:
     AddNote() {
-        name = "/add_node";
+        name = "/add_note";
     }
+
+    void init(const string &currentCommand) override;
 };
+
+void AddNote::init(const string &currentCommand) {
+    if (currentCommand == name) {
+        string note;
+
+        cout << "Enter new note:" << endl;
+        cin >> note;
+        cout << note + "\n" << endl;
+    }
+}
 
 #endif //CPP_ADDNOTE_H

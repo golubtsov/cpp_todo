@@ -8,6 +8,16 @@ public:
     ListNotes() {
         name = "/list_notes";
     }
+
+    void init(const string &currentCommand) override;
 };
+
+void ListNotes::init(const string &currentCommand) {
+    if (currentCommand == name) {
+        string note;
+
+        cout << "List notes:" << endl;
+    }
+}
 
 #endif //CPP_LISTNOTE_H

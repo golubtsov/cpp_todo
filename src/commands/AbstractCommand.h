@@ -9,13 +9,17 @@ using namespace std;
 
 class AbstractCommand {
 public:
-    string get_name();
+    virtual ~AbstractCommand() = default;
+
+    string getName();
+
+    virtual void init(const string &currentCommand) = 0;
 
 protected:
     string name = "example_command";
 };
 
-string AbstractCommand::get_name() {
+string AbstractCommand::getName() {
     return this->name;
 }
 
